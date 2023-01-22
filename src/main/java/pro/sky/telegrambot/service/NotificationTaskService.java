@@ -51,7 +51,7 @@ public class NotificationTaskService {
     public void sendNotifications() {
         List<NotificationTask> tasksToNotify =
                 this.notificationTaskRepository
-                        .findByNotificationTimeEquals(LocalDateTime.now().truncatedTo(ChronoUnit.MINUTES));
+                        .findByDataTimeEquals(LocalDateTime.now().truncatedTo(ChronoUnit.MINUTES));
         tasksToNotify.forEach(task -> {
             this.telegramBot.execute(new SendMessage(
                     task.getId(), task.getMessage()

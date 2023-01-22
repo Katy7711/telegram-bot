@@ -7,7 +7,7 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 public interface NotificationTaskRepository extends JpaRepository <NotificationTask, Long> {
-    List<NotificationTask> findByNotificationTimeEquals(LocalDateTime dateTime);
+    List<NotificationTask> findByDataTimeEquals(LocalDateTime dateTime);
 
 
 }
