@@ -45,7 +45,7 @@ public class TelegramBotUpdatesListener implements UpdatesListener {
         if (userMessage.equals("/start")) {
             this.telegramBot.execute(
                     new SendMessage(
-                            chatId, "Привет, это напоминание"));
+                            chatId, "Привет, я бот Федя и я напомню тебе о важных событиях"));
         } else {
             if (this.notificationTaskService.processNotification(chatId, userMessage)) {
                 this.telegramBot.execute(new SendMessage(chatId, "Напоминание создано"));
